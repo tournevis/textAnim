@@ -14,12 +14,9 @@ p{
 span:nth-child(2n){
 //  position: relative;
 
-  transform-origin: 50% 50%;
-  transform: translateX(20px);
+ /** WIP **/
 
 }
 span:nth-child(2n + 1 ){
-  position: relative;
-  transform-origin: 0 -20px;
 
 }
