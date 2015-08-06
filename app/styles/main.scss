@@ -1,22 +1,40 @@
 // bower:scss
 // endbower
 @import 'mixin';
-
+@include keyframes(slide-right) {
+  0% { margin-right: 2%;
+      opacity: 0;
+  }
+  90% { margin-right: 0%;
+      opacity: 1;
+  }
+}
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+  position:relative;
 }
 p{
   position: relative;
 
 }
-span:nth-child(2n){
-//  position: relative;
-
- /** WIP **/
-
+.animType1{
+  font-size: 3em;
+  position: relative;
 }
-span:nth-child(2n + 1 ){
+.animType1:nth-child(2n){
+  padding-bottom:50px;
+ color:red;
+ /** WIP **/
+}
+.animType1:nth-child(2n + 1 ){
+  color:blue;
+}
 
+.animType2{
+  position: relative;
+
+  font-size: 2em;
+  @include animation('slide-right 2s 0.2s cubic-bezier(0.01, 0.58, 0.64, 0.97)');
 }
