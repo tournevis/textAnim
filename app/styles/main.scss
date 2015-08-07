@@ -1,40 +1,56 @@
 // bower:scss
 // endbower
 @import 'mixin';
-@include keyframes(slide-right) {
-  0% { margin-right: 2%;
-      opacity: 0;
+@include keyframes(topDown) {
+  0% {
+      //  margin-right: 50px;
+      //margin-left: 50px;
+
   }
-  90% { margin-right: 0%;
+  60%{
+    opacity: 0.5;
+     text-shadow: 0px 0px 0px #CCC;
+  }
+  100% {
+     text-shadow: 0px 0px 0px #CCC;
+      margin-left: 0;
+      margin-right: 0;
       opacity: 1;
   }
 }
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  background: #222;
   position:relative;
 }
-p{
+.animText{
   position: relative;
 
+  //text-overflow: ellipsis;
 }
 .animType1{
+  opacity: 0;
   font-size: 3em;
   position: relative;
+  //margin-left: 50px;
+  text-overflow: clip;
+  white-space: nowrap;
+  @include animation('topDown 1s 1s forwards cubic-bezier(0, 0, 0.31, 0.98)');
 }
 .animType1:nth-child(2n){
-  padding-bottom:50px;
- color:red;
+ color:rgba(0,0,0,0);
+   text-shadow: 0px -50px 20px #255;
  /** WIP **/
 }
 .animType1:nth-child(2n + 1 ){
-  color:blue;
+    text-shadow: 0px 50px 20px #552;
+  color:rgba(0,0,0,0);
 }
 
 .animType2{
   position: relative;
 
   font-size: 2em;
-  @include animation('slide-right 2s 0.2s cubic-bezier(0.01, 0.58, 0.64, 0.97)');
+
 }
